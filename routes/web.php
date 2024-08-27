@@ -7,9 +7,9 @@ use App\Http\Controllers\SessionController;
 use App\Http\Controllers\RegisteredUserController;
 
 Route::get('/job', [JobController::class, 'index']);
-Route::get('/jobs/create', [JobController::class, 'create']);
-Route::post('/jobs', [JobController::class, 'store']);
-Route::get('/jobs/{job}', [JobController::class,'show']);
+Route::get('/jobs/create', [JobController::class, 'create'])->middleware('auth');
+Route::post('/jobs', [JobController::class, 'store'])->middleware('auth');
+Route::get('/jobs/{job}', [JobController::class,'show'])->middleware('auth');
 
 Route::delete('/jobs/{job}', [JobController::class, 'destroy'])->can('edit','job')->middleware('auth');
 Route::patch('/jobs/{job}', [JobController::class, 'update'])->can('edit','job')->middleware('auth');
@@ -23,7 +23,7 @@ Route::get('/cv', function () {
     return view('cv');
 });
 
-Route::get('/search', SearchController::class); 
+Route::get('/search', SearchController::class);
 
 // sekcja logowania i rejestracji
 

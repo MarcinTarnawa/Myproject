@@ -61,16 +61,17 @@
             </div>
         </div>
     </form>
-
+    
     <form method="POST" action="/jobs/{{ $job->id }}" id="delete" class="hidden">
         @csrf
         @method('DELETE')
     </form>
     
+    <!-- test
     @can('edit', $job)
     <a href="/job" class="mt-6">
         <button>Edit</button>
     </a>
-    @endcan
+    @endcan -->
 
 </x-layout>

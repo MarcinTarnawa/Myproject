@@ -7,7 +7,7 @@
 
         <div class="mb-6">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
-        Title
+        Nazwa
         </label>
         <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" name="title" placeholder="CEO">
         <x-error name="title" />
@@ -15,7 +15,7 @@
 
         <div class="mb-6">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="salary">
-        Salary
+        Pensja
         </label>
         <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" name="salary" placeholder="$50,000 USD">
         <x-error name="salary" />
@@ -24,7 +24,7 @@
         
         <div class="flex items-center justify-between">
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-        Add
+        Dodaj
         </button>
         </div>
     </form>
