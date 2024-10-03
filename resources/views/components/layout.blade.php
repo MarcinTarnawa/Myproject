@@ -25,6 +25,8 @@
                         <x-nav-link href="/" :active="request()->is('/')">Strona Główna</x-nav-link>
                         <x-nav-link href="/cv" :active="request()->is('cv')">CV</x-nav-link>
                         <x-nav-link href="/job" :active="request()->is('job')">Baza danych</x-nav-link>
+                        <body class="dark"> <button @click="toggleTheme">Przełącz motyw</button>
+                        </body>
                         </div>
                     </div>
                 </div>
@@ -44,7 +46,7 @@
                         @endauth
 
                         @guest()
-                            <div class="text-white space-x-6 font-bold">
+                            <div class="text-white space-x-6 font-bold dark:bg-slate-800">
                             <x-nav-link href="/register" :active="request()->is('register')">Sign up</x-nav-link>
                             <x-nav-link href="/login" :active="request()->is('login')">Log in</x-nav-link>
                             </div>

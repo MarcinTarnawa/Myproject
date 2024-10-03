@@ -49,14 +49,18 @@
                 </div>
             </div>
             <div class="mt-6 flex items-center justify-between gap-x-6">
+                
                 <div class="flex items-center">
+                    @auth
                     <button form="delete" class="text-red-500 text-sm font-bold">Delete</button>
+                    @endauth
                 </div>
 
                 <div>
                     <a href="/job" class="text-sm font-semibold leading-6 text-gray-900">Cancel</a>
-
+                    @auth
                     <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Update</button>
+                    @endauth
                 </div>
             </div>
         </div>

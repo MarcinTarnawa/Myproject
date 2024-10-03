@@ -48,7 +48,7 @@ class JobController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(job $job)
+    public function show(Job $job)
     {
         return view('jobs.edit', ['job' => $job]);
     }
@@ -56,7 +56,7 @@ class JobController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(job $job)
+    public function edit(Job $job)
     { 
         return view('jobs.edit', ['job' => $job]);
     }

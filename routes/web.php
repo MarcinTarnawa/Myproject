@@ -9,7 +9,7 @@ use App\Http\Controllers\RegisteredUserController;
 Route::get('/job', [JobController::class, 'index']);
 Route::get('/jobs/create', [JobController::class, 'create'])->middleware('auth');
 Route::post('/jobs', [JobController::class, 'store'])->middleware('auth');
-Route::get('/jobs/{job}', [JobController::class,'show'])->middleware('auth');
+Route::get('/jobs/{job}', [JobController::class,'show']);
 
 Route::delete('/jobs/{job}', [JobController::class, 'destroy'])->can('edit','job')->middleware('auth');
 Route::patch('/jobs/{job}', [JobController::class, 'update'])->can('edit','job')->middleware('auth');
@@ -35,10 +35,3 @@ Route::middleware('guest')->group(function() {
 });
 
 Route::delete('/logout',[SessionController::class, 'destroy'])->middleware('auth');
-
-// archiwa
-
-
-// Route::delete('/jobs/{job}', [JobController::class, 'destroy']);
-// Route::get('/job/edit', [JobController::class,'edit'])->middleware('auth')->can('edit','job');
-// Route::delete('/jobs/{job}', [JobController::class, 'delete']);
