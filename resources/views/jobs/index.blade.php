@@ -9,6 +9,7 @@
                 @foreach($jobs as $job)
                     <x-job-card :$job />
                 @endforeach
+                {{ $jobs->links() }}
             </div> 
         </section>
     </div>
