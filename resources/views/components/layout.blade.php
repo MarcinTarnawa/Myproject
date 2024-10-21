@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-100">
+<html lang="en" class="h-full ">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +7,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     @vite(['resources/css/app.css','resources/js/app.js'])
 </head>
 
-<body class="h-full">
+<body class="h-full" data-bs-theme="dark">
     <nav class="bg-gray-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
@@ -23,13 +25,20 @@
                         <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         <x-nav-link href="/" :active="request()->is('/')">Strona Główna</x-nav-link>
-                        <x-nav-link href="/cv" :active="request()->is('cv')">CV</x-nav-link>
+                        <x-nav-link href="/cv" :active="request()->is('cv')">Wyszukaj</x-nav-link>
                         <x-nav-link href="/job" :active="request()->is('job')">Baza danych</x-nav-link>
-                        <body class="dark"> <button @click="toggleTheme">Przełącz motyw</button>
-                        </body>
                         </div>
                     </div>
                 </div>
+                    <div class="form-check form-switch mx-4">
+                                                <input
+                                                class="form-check-input p-2"
+                                                type="checkbox"
+                                                role="switch"
+                                                id="switch"
+                                                checked
+                                                onclick="myFunction()"/>
+
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
                         @auth
@@ -68,4 +77,11 @@
     </main>
 
 </body>
+                    <script>
+                        function myFunction() {
+                            var element = document.body;
+                            element.dataset.bsTheme =
+                                element.dataset.bsTheme == "light" ? "dark" : "light";
+                        }
+                    </script>   
 </html>

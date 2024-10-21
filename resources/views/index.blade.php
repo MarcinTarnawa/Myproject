@@ -1,6 +1,6 @@
 <x-layout>
     <x-slot:heading>
-    Main
+    Strona Główna
     </x-slot:heading>
     <x-section-heading>My new Project</x-section-heading>
 </x-layout>

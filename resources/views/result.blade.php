@@ -1,5 +1,5 @@
 <x-layout>
-    <x-slot:heading>Result</x-slot:heading>
+    <x-slot:heading>Wynik</x-slot:heading>
 
     <div class="space-y-6">
         @foreach($jobs as $job)
