@@ -7,12 +7,28 @@ use Illuminate\Http\Request;
 
 class SearchController extends Controller
 {
+    /**
+     * Wyszykaj w bazie danych
+     */
     public function __invoke() {
         $jobs = Job::query()
             ->with(['employer'])
-            ->where('title', 'LIKE', '%'.request('q').'%') // %-> każda liczba znaków przed i po może się tam znajdować
+            ->where('title', 'LIKE', '%'.request('q').'%')
             ->get();
 
-        return view('result', ['jobs' => $jobs]);
+        $count = count($jobs);
+
+        if (($count === 0))  {
+            
+        return view('result', ['jobs' => $jobs])->with('message','Brak Wyniku');
+        }
+        
+        else
+
+        {
+
+        return view('result', ['jobs' => $jobs])->with('message','Wynik wyszukiwania');
+        }
+
     }
 }

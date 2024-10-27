@@ -8,10 +8,17 @@ use Illuminate\Validation\ValidationException;
 
 class SessionController extends Controller
 {
+    /**
+     * Wyświetlenie strony logowania
+     */
     public function create()
     {
         return view('auth.login');
     }
+
+    /**
+     * Utworzenie nowej sesji
+     */
     public function store()
     {
         $attributes = request()->validate([
@@ -28,6 +35,10 @@ class SessionController extends Controller
 
         return redirect('/');
     }
+
+    /**
+     * Zakończenie sesji
+     */
     public function destroy()
     {
         Auth::logout();

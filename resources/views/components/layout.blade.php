@@ -14,6 +14,7 @@
 </head>
 
 <body class="h-full" data-bs-theme="dark">
+    <!-- Nawigacja strony -->
     <nav class="bg-gray-800">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div class="flex h-16 items-center justify-between">
@@ -21,6 +22,7 @@
                     <div class="flex-shrink-0">
                         <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your image">
                     </div>
+
                     <div class="hidden md:block">
                         <div class="ml-10 flex items-baseline space-x-4">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
@@ -31,13 +33,13 @@
                     </div>
                 </div>
                     <div class="form-check form-switch mx-4">
-                                                <input
-                                                class="form-check-input p-2"
-                                                type="checkbox"
-                                                role="switch"
-                                                id="switch"
-                                                checked
-                                                onclick="myFunction()"/>
+                        <input
+                        class="form-check-input p-2"
+                        type="checkbox"
+                        role="switch"
+                        id="switch"
+                        checked
+                        onclick="myFunction()"/>
 
                 <div class="hidden md:block">
                     <div class="ml-4 flex items-center md:ml-6">
@@ -49,15 +51,16 @@
                                     <button class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Log out</button>
                                 </form>
                             </div>
+
                             <div class="space-x-6 font-bold flex">
-                            <x-nav-link href="/jobs/create" :active="request()->is('jobs/create')">Create</x-nav-link>
+                                <x-nav-link href="/jobs/create" :active="request()->is('jobs/create')">Create</x-nav-link>
                             </div>
                         @endauth
 
                         @guest()
                             <div class="text-white space-x-6 font-bold dark:bg-slate-800">
-                            <x-nav-link href="/register" :active="request()->is('register')">Sign up</x-nav-link>
-                            <x-nav-link href="/login" :active="request()->is('login')">Log in</x-nav-link>
+                                <x-nav-link href="/register" :active="request()->is('register')">Zarejestruj</x-nav-link>
+                                <x-nav-link href="/login" :active="request()->is('login')">Zaloguj</x-nav-link>
                             </div>
                         @endguest
                     </div>
@@ -66,22 +69,25 @@
         </div>
     </nav>
 
+    <!-- Tytuł strony -->
     <header class="bg-white shadow">
         <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
             <h1 class="text-3xl font-bold tracking-tight text-gray-900">{{ $heading }} </h1>
         </div>
-     </header>
+    </header>
 
+    <!-- Zawartość strony -->
     <main class="mt-10 max-w-[986px] mx-auto">
             {{ $slot }}
     </main>
 
 </body>
-                    <script>
-                        function myFunction() {
-                            var element = document.body;
-                            element.dataset.bsTheme =
-                                element.dataset.bsTheme == "light" ? "dark" : "light";
-                        }
-                    </script>   
+    <!-- skrypt od dark mode -->
+    <script>
+        function myFunction() {
+            var element = document.body;
+            element.dataset.bsTheme =
+                element.dataset.bsTheme == "light" ? "dark" : "light";
+        }
+    </script>   
 </html>

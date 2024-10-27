@@ -9,7 +9,7 @@ use Illuminate\Auth\Access\Response;
 class JobPolicy
 {
     /**
-     * Gate for delejt.
+     * Gate for delete.
      */
 
     public function edit(User $user, Job $job): bool

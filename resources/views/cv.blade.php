@@ -2,6 +2,7 @@
     <x-slot:heading>
        Wyszukiwarka 
     </x-slot:heading>
+    
     <!-- wyszukiwarka -->
 
     <section class="text-center pt-6">
