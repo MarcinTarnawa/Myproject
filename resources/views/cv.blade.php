@@ -15,4 +15,3 @@
     </section>
 
 </x-layout>
-

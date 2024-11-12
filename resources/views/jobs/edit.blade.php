@@ -48,6 +48,7 @@
                     </div>
                 </div>
             </div>
+            
             <div class="mt-6 flex items-center justify-between gap-x-6">
                 
                 <div class="flex items-center">
@@ -70,12 +71,5 @@
         @csrf
         @method('DELETE')
     </form>
-    
-    <!-- test
-    @can('edit', $job)
-    <a href="/job" class="mt-6">
-        <button>Edit</button>
-    </a>
-    @endcan -->
 
 </x-layout>
