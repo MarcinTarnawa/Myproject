@@ -19,11 +19,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/cv', function () {
-    return view('cv');
+Route::get('/search', function () {
+    return view('search');
 });
 
-Route::get('/search', SearchController::class);
+Route::get('/look', SearchController::class);
 
 // sekcja logowania i rejestracji
 
