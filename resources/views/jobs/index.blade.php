@@ -7,10 +7,10 @@
         <section>
             <div>
                 @foreach($jobs as $job)
-                    <x-job-card :$job />
+                <x-job-card :$job />
                 @endforeach
                 {{ $jobs->links() }}
-            </div> 
+            </div>
         </section>
     </div>
 </x-layout>

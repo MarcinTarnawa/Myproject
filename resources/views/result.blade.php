@@ -7,10 +7,10 @@
 
     <div class="space-y-6">
         @foreach($jobs as $job)
-            <x-job-card :$job />
+        <x-job-card :$job />
         @endforeach
     </div>
-    
+
     <section class="text-center pt-6">
         <h1 class="font-bold text-4xl">Wyszukaj</h1>
 

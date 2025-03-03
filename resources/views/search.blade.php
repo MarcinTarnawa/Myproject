@@ -1,8 +1,8 @@
 <x-layout>
     <x-slot:heading>
-       Wyszukiwarka 
+        Wyszukiwarka
     </x-slot:heading>
-    
+
     <!-- wyszukiwarka -->
 
     <section class="text-center pt-6">

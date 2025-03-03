@@ -68,7 +68,7 @@
         <!-- Tytuł strony -->
         <header>
             <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-                <h1 class="px-4 py-2 rounded-md text-3xl font-bold tracking-tight bg-white dark:bg-slate-800 text-slate-900 dark:text-white">{{ $heading }} </h1>
+                <h1 class="bg-white dark:bg-slate-800 px-4 py-2 rounded-md text-3xl font-bold tracking-tight text-slate-900 dark:text-white">{{ $heading }} </h1>
             </div>
         </header>
 
