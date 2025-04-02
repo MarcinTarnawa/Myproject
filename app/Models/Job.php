@@ -11,7 +11,7 @@ class Job extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'salary']; // mass assignment allowed 
+    protected $fillable = ['title', 'salary', 'value']; // mass assignment allowed 
 
     public function employer(): BelongsTo
     {

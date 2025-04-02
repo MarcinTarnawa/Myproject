@@ -12,5 +12,11 @@ if (localStorage.getItem('darkMode') === 'true') {
 darkMode.addEventListener('click', () => {
   body.classList.toggle('dark');
   localStorage.setItem('darkMode', body.classList.contains('dark'));
+  toggleIcons();
 });
 
+// toggle svg icons
+function toggleIcons() {
+  const icons = darkMode.querySelectorAll('svg');
+  icons.forEach(icon => icon.classList.toggle('hidden'));
+}

@@ -6,8 +6,8 @@
     <div class="space-y-10">
         <section>
             <div>
-                @foreach($jobs as $job)
-                <x-job-card :$job />
+                @foreach ($jobs as $job)
+                    <x-job-card :$job />
                 @endforeach
                 {{ $jobs->links() }}
             </div>

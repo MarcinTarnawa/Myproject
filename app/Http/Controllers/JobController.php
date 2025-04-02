@@ -17,7 +17,7 @@ class JobController extends Controller
     {
         $jobs = Job::latest()->paginate(8);
 
-        return view('jobs.index', [ 'jobs' => $jobs ]);
+        return view('jobs.index', ['jobs' => $jobs]);
     }
 
     /**
@@ -35,9 +35,10 @@ class JobController extends Controller
     {
         $attributes = $request->validate([
             'title' => ['required'],
-            'salary' => ['required']
+            'salary' => ['required', 'numeric'],
+            'value' => ['required'],
         ]);
-       
+
         $job = Auth::user()->employer->jobs()->create($attributes);
 
         return redirect('/job');
@@ -56,7 +57,7 @@ class JobController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(Job $job)
-    { 
+    {
         return view('jobs.edit', ['job' => $job]);
     }
 
@@ -65,19 +66,21 @@ class JobController extends Controller
      */
     public function update(Job $job)
     {
-        
+
         Gate::authorize('edit', $job);
 
         request()->validate([
-            'title'=>['required'],
-            'salary'=>['required']
+            'title' => ['required'],
+            'salary' => ['required', 'numeric'],
+            'value' => ['required'],
         ]);
-       
+
         $job->update([
-            'title'=> request('title'),
-            'salary'=> request('salary')
+            'title' => request('title'),
+            'salary' => request('salary'),
+            'value' => request('value'),
         ]);
-        
+
         return redirect('/jobs/' . $job->id);
     }
 
@@ -86,11 +89,10 @@ class JobController extends Controller
      */
     public function destroy(Job $job)
     {
-        
         Gate::authorize('edit', $job);
 
         $job->delete();
-        
+
         return redirect('/job');
     }
 }

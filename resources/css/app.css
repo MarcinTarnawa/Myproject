@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 /* make color changes smooth */
-*{
-  @apply transition-colors duration-150 
+* {
+  @apply transition-colors duration-150
 }
 
 .light {
